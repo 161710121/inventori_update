@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKampussTable extends Migration
+class CreateBarangrusaksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateKampussTable extends Migration
      */
     public function up()
     {
-        Schema::create('kampuss', function (Blueprint $table) {
+        Schema::create('barangrusaks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_kampus');
-            $table->string('nama_kampus');
-            $table->text('alamat');
-            $table->string('telp_kampus');
-            $table->string('deskripsi');
-            $table->string('status');
+            $table->integer('barang_id')->unsigned();
+            $table->foreign('barang_id')->references('id')->on('barangs')->onUpdate('cascade')->onDelete('cascade');
+            
+            $table->string('status_kerusakan');
+            $table->date('tgl_perbaikan');    
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateKampussTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kampuss');
+        Schema::dropIfExists('barangrusaks');
     }
 }

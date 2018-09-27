@@ -16,7 +16,7 @@ class BarangController extends Controller
     public function index()
     {
         $barang = Barang::with('Kategori')->get();
-        return view('barang.index', compact('barang'));
+        return view('barang.index', compact('barang'));  
     }
 
     /**
@@ -104,19 +104,18 @@ class BarangController extends Controller
             'tanggal_inputan'=>'required|max:255',
             'deskripsi'=>'required|string',
             'status'=>'required|string|max:255',
-            ]);
-            
-            $barang = Barang::findOrFail($barang->id);
-            $barang->kode_barang = $request->kode_barang;
-            $barang->nama_barang = $request->nama_barang;
-            $barang->kategori_id = $request->kategori_id;
-            $barang->jumlah_barang = $request->jumlah_barang;
-            $barang->harga_satuan = $request->harga_satuan;
-            $barang->tanggal_inputan = $request->tanggal_inputan;
-            $barang->deskripsi = $request->deskripsi;
-            $barang->status = $request->status;
-            $barang->save();
-            return redirect()->route('barang.index');
+        ]);
+        $barang = Barang::findOrFail($barang->id);
+        $barang->kode_barang = $request->kode_barang;
+        $barang->nama_barang = $request->nama_barang;
+        $barang->kategori_id = $request->kategori_id;
+        $barang->jumlah_barang = $request->jumlah_barang;
+        $barang->harga_satuan = $request->harga_satuan;
+        $barang->tanggal_inputan = $request->tanggal_inputan;
+        $barang->deskripsi = $request->deskripsi;
+        $barang->status = $request->status;
+        $barang->save();
+        return redirect()->route('barang.index');
     }
 
     /**

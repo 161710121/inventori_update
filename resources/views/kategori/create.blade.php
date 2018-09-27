@@ -45,7 +45,7 @@
 						</div>
 						
 						<div class="form-group row">
-							<label for="deskripsi" class="col-md-4 col-form-label text-md-right">{{ __('Kode Kategori') }}</label>
+							<label for="deskripsi" class="col-md-4 col-form-label text-md-right">{{ __('Deskripsi') }}</label>
 							
 							<div class="col-md-6">
 								<input id="deskripsi" type="text" class="form-control{{ $errors->has('deskripsi') ? ' is-invalid' : '' }}" name="deskripsi" value="{{ old('deskripsi') }}" required autofocus>

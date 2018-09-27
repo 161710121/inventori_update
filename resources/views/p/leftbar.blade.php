@@ -22,11 +22,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Barang</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Ruangan</a></li>
+            <li><a href="{{ route('barang.index') }}"><i class="fa fa-circle-o"></i> Barang</a></li>
+            <li><a href="{{ route('ruangan.index') }}"><i class="fa fa-circle-o"></i> Ruangan</a></li>
             <li><a href="{{ route('kategori.index') }}"><i class="fa fa-circle-o"></i> Kategori</a></li>
-            <li><a href="{{ route('jnsruang.index') }}"><i class="fa fa-circle-o"></i> Jenis Ruangan</a></li>
-            {{-- <li><a href="{{ route('kampuss.index') }}"><i class="fa fa-circle-o"></i> Kampus</a></li> --}}
+            <li><a href="{{ route('ruangjns.index') }}"><i class="fa fa-circle-o"></i> Jenis Ruangan</a></li>
+            <li><a href="{{ route('kampus.index') }}"><i class="fa fa-circle-o"></i> Kampus</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>

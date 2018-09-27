@@ -30,7 +30,7 @@
                 <div class="icon">
                     <i class="fa fa-envelope-open"></i>
                 </div>
-                <a href="{{ route('jnsruang.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ route('ruangjns.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

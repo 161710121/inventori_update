@@ -25,11 +25,11 @@ class CreateRuangansTable extends Migration
             $table->integer('barang_id')->unsigned();
             $table->foreign('barang_id')->references('id')->on('barangs')->onUpdate('cascade')->onDelete('cascade');
 
-			$table->integer('jenis_ruangan_id')->unsigned();
-            $table->foreign('jenis_ruangan_id')->references('id')->on('jenisruangans')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('jenisruangan_id')->unsigned();
+            $table->foreign('jenisruangan_id')->references('id')->on('ruanganjns')->onUpdate('cascade')->onDelete('cascade');
 
-			$table->integer('kampus_id')->unsigned();
-            $table->foreign('kampus_id')->references('id')->on('kampuss')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('kampus_id')->unsigned();
+            $table->foreign('kampus_id')->references('id')->on('kampuses')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

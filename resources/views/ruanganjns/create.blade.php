@@ -8,14 +8,14 @@
 				<div class="card card-primary">
 					<div class="card-header">
 						<h3 class="card-title">Tambah Data Jenis Ruangan</h3>
-						<a class="fa fa-arrow-circle-left card-title pull-right" href="{{route('jnsruang.index')}}"> Kembali</a>
+						<a class="fa fa-arrow-circle-left card-title pull-right" href="{{route('ruangjns.index')}}"> Kembali</a>
 					</div>
 				</div>
 				<!-- /.card-header -->
 
 				<!-- form start -->
 				<div class="panel-body">
-					<form action="{{ route('jnsruang.store') }}" method="post">
+					<form action="{{ route('ruangjns.store') }}" method="post">
 						{{ csrf_field() }}
 
 						<div class="form-group row">

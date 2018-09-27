@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kategori;
-use App\Jenis_Ruangan;
 use App\Kampus;
 use App\User;
 use App\Barang;
 use App\Ruangan;
+use App\Ruanganjns;
 
 class HomeController extends Controller
 {
@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         $kate = Kategori::count();
-        $jns = Jenis_Ruangan::count();
+        $jns = Ruanganjns::count();
         $kam = Kampus::count();
         $bar = Barang::count();
         $rua = Ruangan::count();

@@ -15,7 +15,7 @@ class KampusController extends Controller
     public function index()
     {
         $kampus = Kampus::all();
-        return view('kampus.index', compact('kampus'));
+        return view('kampus.index', compact('kampus'));    
     }
 
     /**
