@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('/assets/img/avatar/oju_admin_1246350.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <h4><p>{{ Auth::user()->name }}</p></h4>
@@ -27,7 +27,7 @@
             <li><a href="{{ route('kategori.index') }}"><i class="fa fa-circle-o"></i> Kategori</a></li>
             <li><a href="{{ route('ruangjns.index') }}"><i class="fa fa-circle-o"></i> Jenis Ruangan</a></li>
             <li><a href="{{ route('kampus.index') }}"><i class="fa fa-circle-o"></i> Kampus</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> User</a></li>
+            <li><a href="{{ route('user.index') }}"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -38,9 +38,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Expedisi</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Tanda Terima</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Barang Rusak</a></li>
+            <li><a href="{{ route('expedisi.index') }}"><i class="fa fa-circle-o"></i> Expedisi</a></li>
+            <li><a href="{{ route('tandaterima.index') }}"><i class="fa fa-circle-o"></i> Tanda Terima</a></li>
+            <li><a href="{{ route('barangrusak.index') }}"><i class="fa fa-circle-o"></i> Barang Rusak</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Laporan</span></a></li>

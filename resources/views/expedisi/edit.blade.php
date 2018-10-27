@@ -6,110 +6,101 @@
 			<div class="panel panel-primary">
 				<div class="card card-primary">
 					<div class="card-header">
-						<h3 class="card-title">Edit Data Barang</h3>
-						<a class="fa fa-arrow-circle-left card-title pull-right" href="{{route('barang.index')}}"> Kembali</a>
+						<h3 class="card-title">Edit Data Expedisi</h3>
+						<a class="fa fa-arrow-circle-left card-title pull-right" href="{{route('expedisi.index')}}"> Kembali</a>
 					</div>
 				</div>
 				<!-- /.card-header -->
 				
 				<!-- form start -->
 				<div class="panel-body">
-					<form action="{{ route('barang.update',$barang->id) }}" method="post">
+					<form action="{{ route('expedisi.update',$expedisi->id) }}" method="post">
 							<input name="_method" type="hidden" value="PATCH">
 							{{ csrf_field() }}
 							
 							<div class="form-group row">
-								<label for="kode_barang" class="col-md-4 col-form-label text-md-right">{{ __('Kode Barang') }}</label>
+								<label for="no_transaksi" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Transaksi') }}</label>
 								
 								<div class="col-md-6">
-									<input id="kode_barang" type="text" class="form-control{{ $errors->has('kode_barang') ? ' is-invalid' : '' }}" name="kode_barang" value="{{ $barang->kode_barang }}" >
-									@if ($errors->has('kode_barang'))
+									<input id="no_transaksi" type="text" class="form-control{{ $errors->has('no_transaksi') ? ' is-invalid' : '' }}" name="no_transaksi" value="{{ $expedisi->no_transaksi }}" >
+									@if ($errors->has('no_transaksi'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('kode_barang') }}</strong>
+										<strong>{{ $errors->first('no_transaksi') }}</strong>
 									</span>
 									@endif
 								</div>
 							</div>
 							
 							<div class="form-group row">
-								<label for="nama_barang" class="col-md-4 col-form-label text-md-right">{{ __('Nama Barang') }}</label>
+								<label for="kampus_id" class="col-md-4 col-form-label text-md-right">{{ __('Kampus') }}</label>
 								
 								<div class="col-md-6">
-									<input id="nama_barang" type="text" class="form-control{{ $errors->has('nama_barang') ? ' is-invalid' : '' }}" name="nama_barang" value="{{ $barang->nama_barang }}" >
-									@if ($errors->has('nama_barang'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('nama_barang') }}</strong>
-									</span>
-									@endif
-								</div>
-							</div>
-
-							<div class="form-group row">
-								<label for="kategori_id" class="col-md-4 col-form-label text-md-right">{{ __('Kategori') }}</label>
-								
-								<div class="col-md-6">
-									<select name="kategori_id" class="form-control">
-										@foreach($kategori as $data)
-										<option value="{{ $data->id}}" {{$barangkat == $data->id ? 'selected="selected"' : '' }}>{{$data->kode_kategori}}</option>
+									<select name="kampus_id" class="form-control">
+										@foreach($kampus as $data)
+										<option value="{{ $data->id}}" {{$kampusa == $data->id ? 'selected="selected"' : '' }}>{{$data->kode_kampus}}</option>
 										@endforeach
 									</select>
 									
-									@if ($errors->has('kategori_id'))
+									@if ($errors->has('kampus_id'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('kategori_id') }}</strong>
+										<strong>{{ $errors->first('kampus_id') }}</strong>
 									</span>
 									@endif
 								</div>
 							</div>
 							
 							<div class="form-group row">
-								<label for="jumlah_barang" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah Barang') }}</label>
+								<label for="tgl" class="col-md-4 col-form-label text-md-right">{{ __('Tanggal') }}</label>
 								
 								<div class="col-md-6">
-									<input id="jumlah_barang" type="number" class="form-control{{ $errors->has('jumlah_barang') ? ' is-invalid' : '' }}" name="jumlah_barang" value="{{ $barang->jumlah_barang }}" >
-									@if ($errors->has('jumlah_barang'))
+									<input id="tgl" type="date" class="form-control{{ $errors->has('tgl') ? ' is-invalid' : '' }}" name="tgl" value="{{ $expedisi->tgl }}" >
+									@if ($errors->has('tgl'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('jumlah_barang') }}</strong>
+										<strong>{{ $errors->first('tgl') }}</strong>
 									</span>
 									@endif
 								</div>
 							</div>
 							
 							<div class="form-group row">
-								<label for="harga_satuan" class="col-md-4 col-form-label text-md-right">{{ __('Harga Satuan') }}</label>
+								<label for="waktu" class="col-md-4 col-form-label text-md-right">{{ __('Waktu') }}</label>
 								
 								<div class="col-md-6">
-									<input id="harga_satuan" type="text" class="form-control{{ $errors->has('harga_satuan') ? ' is-invalid' : '' }}" name="harga_satuan" value="{{ $barang->harga_satuan }}" >
-									@if ($errors->has('harga_satuan'))
+									<input id="waktu" type="time" class="form-control{{ $errors->has('waktu') ? ' is-invalid' : '' }}" name="waktu" value="{{ $expedisi->waktu }}" >
+									@if ($errors->has('waktu'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('harga_satuan') }}</strong>
-									</span>
-									@endif
-								</div>
-							</div>
-							
-							
-							<div class="form-group row">
-								<label for="tanggal_inputan" class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Inputan') }}</label>
-								
-								<div class="col-md-6">
-									<input id="tanggal_inputan" type="date" class="form-control{{ $errors->has('tanggal_inputan') ? ' is-invalid' : '' }}" name="tanggal_inputan" value="{{ $barang->tanggal_inputan }}" >
-									@if ($errors->has('tanggal_inputan'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('tanggal_inputan') }}</strong>
+										<strong>{{ $errors->first('waktu') }}</strong>
 									</span>
 									@endif
 								</div>
 							</div>
 							
 							<div class="form-group row">
-								<label for="deskripsi" class="col-md-4 col-form-label text-md-right">{{ __('Deskripsi') }}</label>
+									<label for="barang_id" class="col-md-4 col-form-label text-md-right">{{ __('Barang') }}</label>
+									
+									<div class="col-md-6">
+										<select name="barang_id" class="form-control">
+											@foreach($barang as $data)
+											<option value="{{ $data->id}}" {{$baranga == $data->id ? 'selected="selected"' : '' }}>{{$data->nama_barang}}</option>
+											@endforeach
+										</select>
+										
+										@if ($errors->has('barang_id'))
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $errors->first('barang_id') }}</strong>
+										</span>
+										@endif
+									</div>
+								</div>
+							
+							<div class="form-group row">
+								<label for="jumlah" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah') }}</label>
 								
 								<div class="col-md-6">
-									<input id="deskripsi" type="text" class="form-control{{ $errors->has('deskripsi') ? ' is-invalid' : '' }}" name="deskripsi" value="{{ $barang->deskripsi }}" >
-									@if ($errors->has('deskripsi'))
+									<input id="jumlah" type="text" class="form-control{{ $errors->has('jumlah') ? ' is-invalid' : '' }}" name="jumlah" value="{{ $expedisi->jumlah }}" >
+									@if ($errors->has('jumlah'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('deskripsi') }}</strong>
+										<strong>{{ $errors->first('jumlah') }}</strong>
 									</span>
 									@endif
 								</div>
@@ -119,10 +110,62 @@
 								<label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
 								
 								<div class="col-md-6">
-									<input id="status" type="text" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status" value="{{ $barang->status }}" >
+									<input id="status" type="text" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status" value="{{ $expedisi->status }}" >
 									@if ($errors->has('status'))
 									<span class="invalid-feedback" role="alert">
 										<strong>{{ $errors->first('status') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="deskripsi" class="col-md-4 col-form-label text-md-right">{{ __('Deskripsi') }}</label>
+								
+								<div class="col-md-6">
+									<input id="deskripsi" type="text" class="form-control{{ $errors->has('deskripsi') ? ' is-invalid' : '' }}" name="deskripsi" value="{{ $expedisi->deskripsi }}" >
+									@if ($errors->has('deskripsi'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('deskripsi') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="harga" class="col-md-4 col-form-label text-md-right">{{ __('Harga') }}</label>
+								
+								<div class="col-md-6">
+									<input id="harga" type="text" class="form-control{{ $errors->has('harga') ? ' is-invalid' : '' }}" name="harga" value="{{ $expedisi->harga }}" >
+									@if ($errors->has('harga'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('harga') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="pengirim" class="col-md-4 col-form-label text-md-right">{{ __('Pengirim') }}</label>
+								
+								<div class="col-md-6">
+									<input id="pengirim" type="text" class="form-control{{ $errors->has('pengirim') ? ' is-invalid' : '' }}" name="pengirim" value="{{ $expedisi->pengirim }}" >
+									@if ($errors->has('pengirim'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('pengirim') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="penerima" class="col-md-4 col-form-label text-md-right">{{ __('Penerima') }}</label>
+								
+								<div class="col-md-6">
+									<input id="penerima" type="text" class="form-control{{ $errors->has('penerima') ? ' is-invalid' : '' }}" name="penerima" value="{{ $expedisi->penerima }}" >
+									@if ($errors->has('penerima'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('penerima') }}</strong>
 									</span>
 									@endif
 								</div>

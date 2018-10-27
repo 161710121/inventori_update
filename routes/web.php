@@ -30,22 +30,10 @@ function(){
     Route::resource('kategori', 'KategoriController');
     Route::resource('kampus', 'KampusController');
     Route::resource('barang', 'BarangController');
-    
     Route::resource('ruangjns', 'RuanganjnsController');
-    Route::get('ruangjns/{ruangjn}/edit', 'RuanganjnsController@edit');
-    
     Route::resource('ruangan', 'RuanganController');
-    Route::get('ruangan/{id}/edit', 'RuanganController@edit');
-    
     Route::resource('expedisi', 'ExpedisiController');
-    Route::get('expedisi/{id}/edit', 'ExpedisiController@edit');
-    
     Route::resource('tandaterima', 'TandaterimaController');
-    Route::get('tandaterima/{id}/edit', 'TandaterimaController@edit');
-    
     Route::resource('barangrusak', 'BarangrusakController');
-    Route::get('barangrusak/{id}/edit', 'BarangrusakController@edit');
-    
     Route::resource('user', 'UserController');
-
 });

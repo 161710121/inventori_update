@@ -115,7 +115,7 @@ class RuanganController extends Controller
             'ukuran_lebar'=>'required|string|max:255',
             'ukuran_tinggi'=>'required|string|max:255',
             'status_penggunaan'=>'required|string|max:255',
-            'barang_id'=>'required|string|max:255',
+            'barang_id'=>'required|max:255',
             'jenisruangan_id'=>'required|max:255',
             'kampus_id'=>'required|max:255',
         ]);
@@ -125,8 +125,8 @@ class RuanganController extends Controller
         $ruangan->ukuran_panjang = $request->ukuran_panjang;
         $ruangan->ukuran_lebar = $request->ukuran_lebar;
         $ruangan->ukuran_tinggi = $request->ukuran_tinggi;
-        $ruangan->status_penggunaan = $request->harga_satuan;
-        $ruangan->barang_id = $request->tanggal_inputan;
+        $ruangan->status_penggunaan = $request->status_penggunaan;
+        $ruangan->barang_id = $request->barang_id;
         $ruangan->jenisruangan_id = $request->jenisruangan_id;
         $ruangan->kampus_id = $request->kampus_id;
         $ruangan->save();

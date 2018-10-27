@@ -57,8 +57,8 @@ class TandaterimaController extends Controller
         $tandaterima->kampus_id = $request->kampus_id;
         $tandaterima->barang_id = $request->barang_id;
         $tandaterima->deskripsi = $request->deskripsi;
-        $tandaterima->menerima = $request->penerima;
-        $tandaterima->menyerahkan = $request->pengirim;
+        $tandaterima->menerima = $request->menerima;
+        $tandaterima->menyerahkan = $request->menyerahkan;
         $tandaterima->status = $request->status;
         $tandaterima->save();
         return redirect()->route('tandaterima.index');
@@ -117,8 +117,8 @@ class TandaterimaController extends Controller
         $tandaterima->kampus_id = $request->kampus_id;
         $tandaterima->barang_id = $request->barang_id;
         $tandaterima->deskripsi = $request->deskripsi;
-        $tandaterima->menerima = $request->penerima;
-        $tandaterima->menyerahkan = $request->pengirim;
+        $tandaterima->menerima = $request->menerima;
+        $tandaterima->menyerahkan = $request->menyerahkan;
         $tandaterima->status = $request->status;
         $tandaterima->save();
         return redirect()->route('tandaterima.index');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Barang;
 use App\Kategori;
+use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -44,7 +46,7 @@ class BarangController extends Controller
             'kategori_id'=>'required|string|max:255',
             'jumlah_barang'=>'required|integer|max:255',
             'harga_satuan'=>'required|string|max:255',
-            'tanggal_inputan'=>'required|max:255',
+            'tanggal_inputan'=>'required',
             'deskripsi'=>'required|string',
             'status'=>'required|string|max:255',
         ]);
@@ -101,7 +103,7 @@ class BarangController extends Controller
             'kategori_id'=>'required|string|max:255',
             'jumlah_barang'=>'required|integer|max:255',
             'harga_satuan'=>'required|string|max:255',
-            'tanggal_inputan'=>'required|max:255',
+            'tanggal_inputan'=>'required',
             'deskripsi'=>'required|string',
             'status'=>'required|string|max:255',
         ]);
@@ -130,4 +132,5 @@ class BarangController extends Controller
         $barang->delete();
         return redirect()->route('barang.index');
     }
+        
 }

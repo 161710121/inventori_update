@@ -15,7 +15,7 @@ class CreateTandaterimasTable extends Migration
     {
         Schema::create('tandaterimas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nomor');
+            $table->string('nomor');
             $table->date('tgl');
             
             $table->integer('kampus_id')->unsigned();

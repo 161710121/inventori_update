@@ -104,9 +104,9 @@ class RuanganjnsController extends Controller
      * @param  \App\Ruanganjns  $ruanganjns
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ruanganjns $ruanganjns)
+    public function destroy(Ruanganjns $ruangjn)
     {
-        $ruanganjns = Ruanganjns::findOrFail($ruanganjns->id);
+        $ruanganjns = Ruanganjns::findOrFail($ruangjn->id);
         $ruanganjns->delete();
         return redirect()->route('ruangjns.index');
     }

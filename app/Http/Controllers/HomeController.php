@@ -9,6 +9,9 @@ use App\User;
 use App\Barang;
 use App\Ruangan;
 use App\Ruanganjns;
+use App\Expedisi;
+use App\Tandaterima;
+use App\Barangrusak;
 
 class HomeController extends Controller
 {
@@ -34,8 +37,11 @@ class HomeController extends Controller
         $kam = Kampus::count();
         $bar = Barang::count();
         $rua = Ruangan::count();
+        $ex = Expedisi::count();
+        $tan = Tandaterima::count();
+        $rus = Barangrusak::count();
         $us = User::count();
-        return view('home', compact('kate', 'jns', 'kam', 'bar','rua','us'));
+        return view('home', compact('kate', 'jns', 'kam', 'bar','rua','us','ex','tan','rus'));
         
     }
 }

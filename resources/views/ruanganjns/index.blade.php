@@ -2,25 +2,24 @@
 @section('content')
 
 <section class="content">
-	<div class="row">
-		<div class="col-12">
-		  	<div class="card card-info">
-				<div class="card-header">
-					<h3 class="card-title">Data Jenis Ruangan</h3>
-					<div class="card-title pull-right">
-						<a href="{{route('ruangjns.create')}}">Tambah Data <i class="fa fa-plus"></i></a>
-					</div>
-				</div>
+		<div class="row">
+			<div class="container">
+				<div class="col-md-11">
+					<div class="box box-info">
+						<div class="box-header">
+							<h3 class="box-title" style="font-size:20px; margin-bottom:1%">Data Jenis Ruangan</h3><br>
+							<a class="fa fa-plus box-title btn btn-info" href="{{route('ruangjns.create')}}"> Tambah</a>
+						</div>
 				
-				<div class="card-body table-responsive p-0">
-					<table class="table table-hover">
-						<thead>
+						<div class="box-body table-responsive p-0">
+								<table style="table-layout:auto" class="table table-bordered table-hover">
+									<thead>
 							<tr>
-								<th>No</th>
-								<th>KODE JENIS RUANGAN</th>
-								<th>JENIS RUANGAN</th>
-								<th>TANGGAL BERLAKU</th>
-								<th>STATUS</th>
+								<th style="text-align: center;">No</th>
+								<th style="text-align: center;">KODE JENIS RUANGAN</th>
+								<th style="text-align: center;">JENIS RUANGAN</th>
+								<th style="text-align: center;">TANGGAL BERLAKU</th>
+								<th style="text-align: center;">STATUS</th>
 								<th colspan="3" style="text-align: center;">ACTION</th>
 							</tr>
 						</thead>
@@ -31,15 +30,15 @@
 							@endphp
 							@foreach ($ruanganjns as $data)
 							<tr>
-								<td>{{ $no++ }}</td>
-								<td>{{ $data->kode_jenis_ruangan }}</td>
-								<td>{{ $data->jenis_ruangan }}</td>
-								<td>{{ $data->tgl_berlaku }}</td>
-								<td>{{ $data->status }}</td>
-								<td>
+								<td style="text-align: center;">{{ $no++ }}</td>
+								<td style="text-align: center;">{{ $data->kode_jenis_ruangan }}</td>
+								<td style="text-align: center;">{{ $data->jenis_ruangan }}</td>
+								<td style="text-align: center;">{{ $data->tgl_berlaku }}</td>
+								<td style="text-align: center;">{{ $data->status }}</td>
+								<td style="text-align: center;">
 									<a href="{{ route('ruangjns.edit', $data->id) }}" class="btn btn-warning">Edit</a>
 								</td>
-								<td>
+								<td style="text-align: center;">
 									<form action="{{ route('ruangjns.destroy', $data->id) }}" method="post">
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<input type="hidden" name="_method" value="DELETE">
@@ -54,5 +53,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 @endsection

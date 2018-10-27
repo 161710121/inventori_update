@@ -15,7 +15,7 @@ class CreateExpedisisTable extends Migration
     {
         Schema::create('expedisis', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('no_transaksi');
+            $table->string('no_transaksi');
             
             $table->integer('kampus_id')->unsigned();
             $table->foreign('kampus_id')->references('id')->on('kampuses')->onUpdate('cascade')->onDelete('cascade');
