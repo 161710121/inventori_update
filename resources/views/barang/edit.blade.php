@@ -8,7 +8,7 @@
 					<div class="box">
 						<div class="box box-primary">
 							<div class="box-header">
-								<p class="box-title" style="font-size:25px">Tambah Data Barang</p>
+								<p class="box-title" style="font-size:25px">Edit Data Barang</p>
 								<a class="fa fa-arrow-circle-left box-title pull-right btn btn-info" href="{{route('barang.index')}}"> Kembali</a>
 							</div>
 						</div>

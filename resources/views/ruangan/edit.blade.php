@@ -1,19 +1,21 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
-	<div class="container">
-		<div class="col-md-12">
-			<div class="panel panel-primary">
-				<div class="card card-primary">
-					<div class="card-header">
-						<h3 class="card-title">Edit Data Ruangan</h3>
-						<a class="fa fa-arrow-circle-left card-title pull-right" href="{{route('ruangan.index')}}"> Kembali</a>
-					</div>
-				</div>
-				<!-- /.card-header -->
+
+<section class="content">
+		<div class="row">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box box-primary">
+							<div class="box-header">
+								<p class="box-title" style="font-size:25px">Edit Data Ruangan</p>
+								<a class="fa fa-arrow-circle-left box-title pull-right btn btn-info" href="{{route('ruangan.index')}}"> Kembali</a>
+							</div>
+						</div>
+				<!-- /.box-header -->
 				
 				<!-- form start -->
-				<div class="panel-body">
+				<div class="box-body">
 					<form action="{{ route('ruangan.update',$ruangan->id) }}" method="post">
 							<input name="_method" type="hidden" value="PATCH">
 							{{ csrf_field() }}
@@ -152,16 +154,17 @@
 									@endif
 								</div>
 							</div>
-							<!-- /.card-body -->
+							<!-- /.box-body -->
 							
-							<div class="card-footer">
+							<div class="box-footer">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+	</section>
 @endsection
 				
